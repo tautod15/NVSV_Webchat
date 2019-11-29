@@ -18,8 +18,9 @@
 
                     var message = document.createElement('li'),
                     content = document.createTextNode(event.data);
-                message.appendChild(content);
-                messages.appendChild(message);
+                    message.appendChild(content);
+                    messages.appendChild(message);
+                    document.getElementById('webcam').src = "data:image/jpeg;base64," + event.data.toString();
             };
             document.body.appendChild(messages);
 
@@ -27,5 +28,6 @@
         </script>
     <input type="text" id="text">
     <button onclick="sendMessage()">Send</button>
+    <img id="webcam" src="" alt="" style="display: block;"/>
     </body>
 </html>
